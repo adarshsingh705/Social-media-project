@@ -1,4 +1,6 @@
 import userModel from "./user.model.js";
+import postModel from "../post/post.model.js";
+import session from "express-session";
 
 export default class UserController {
   // sign up
@@ -24,20 +26,33 @@ export default class UserController {
       // Log the request body to debug
       console.log("Request body:", req.body);
 
-      const { email, password } = req.body;
+      let { email, password } = req.body;
 
       // Log extracted values to debug
       console.log("Email:", email, "Password:", password);
 
-      const user = await userModel.validUser(email, password);
+      let user = await userModel.validUser(email, password);
 
+      let userid = user.id;
+      let usermail = user.email;
+
+      let userpost = postModel.getPostByUserId(userid);
+
+      console.log(userpost);
       // Log the returned user object to debug
       console.log("User:", user);
 
       if (user) {
+        // Set session variables
+        req.session.userEmail = usermail;
+        req.session.userid = userid;
+        console.log("this console form id" + req.session.id);
+        console.log("this console form email" + req.session.email);
+        // Send response
         res.status(200).send({
           message: "User signed in successfully",
           user: { name: user.name },
+          userpost: { userpost },
         });
       } else {
         res.status(400).send({ error: "Invalid email or password" });
@@ -49,3 +64,5 @@ export default class UserController {
     }
   }
 }
+
+//  i am working on when update is heppen it most store user id

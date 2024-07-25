@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/adarshsingh705/social-media-APIs#readme",
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "session": "^0.1.0"
   },
   "type": "module"
 }

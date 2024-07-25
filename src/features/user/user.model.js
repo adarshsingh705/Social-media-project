@@ -23,9 +23,11 @@ export default class userModel {
   }
 }
 
-user = [{
-  id: 1,
-  name: "adarsh",
-  email: "adarshsingh705@gmail.com",
-  password: "adarsh98",
-}];
+user = [
+  {
+    id: 1,
+    name: "adarsh",
+    email: "adarshsingh705@gmail.com",
+    password: "adarsh98",
+  },
+];

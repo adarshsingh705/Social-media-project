@@ -10,4 +10,8 @@ postRouter.post("/", PostController.newPost);
 
 postRouter.get("/:id", PostController.getPostId);
 
+postRouter.get("/delete/:id", PostController.getDeletePost);
+
+postRouter.post("/update/:id", PostController.updatepost);
+
 export default postRouter;
