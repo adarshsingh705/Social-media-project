@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a Node.js REST API project designed for a social media platform. The API provides endpoints for user authentication, image uploading, and interactions with posts (such as commenting and liking). 
+This is a Node.js REST API project designed for a social media platform. The API provides endpoints for user authentication, image uploading, and interactions with posts (such as commenting and liking). I am actively working on enhancing this project with more features, improved security, and optimizing the database (MongoDB). Updates will be committed soon.. 
 
 **Key Features:**
 - **JWT Authentication:** Secures endpoints and user interactions using JSON Web Tokens (JWT).
